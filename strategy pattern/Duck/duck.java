@@ -2,9 +2,9 @@ package Duck;
 import FlyBehavior.FlyBehavior;
 import QuackBehavior.QuackBehavior;
 
-public class duck {
-    public FlyBehavior flyBehavior;
-    public QuackBehavior quackBehavior;
+public class Duck {
+    private FlyBehavior flyBehavior;
+    private QuackBehavior quackBehavior;
 
     public void setFlyBehavior(FlyBehavior fb){
         this.flyBehavior = fb;
@@ -19,6 +19,6 @@ public class duck {
     }
 
     public void performQuack(){
-        this.quackBehavior.quack();;
+        this.quackBehavior.quack();
     }
 }
