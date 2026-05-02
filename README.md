@@ -1,0 +1,1 @@
+### This project has implementation of design patterns from the book *HEAD FIRST DESIGN PATTERNS V2*
