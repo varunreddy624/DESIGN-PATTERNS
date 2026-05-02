@@ -1,5 +1,8 @@
 ```mermaid
 classDiagram
+    direction TB
+
+    %% Left Side: Duck Hierarchy
     class Duck {
         -FlyBehavior flyBehavior
         -QuackBehavior quackBehavior
@@ -8,6 +11,11 @@ classDiagram
         +performFly()
         +performQuack()
     }
+    
+    Duck <|-- MallardDuck : Inheritance
+    Duck <|-- RubberDuck : Inheritance
+    
+    %% Center/Right: Behavior Interfaces
     class FlyBehavior {
         <<interface>>
         +fly()
@@ -16,28 +24,22 @@ classDiagram
         <<interface>>
         +quack()
     }
-    class ModerateFly {
-        +fly()
-    }
-    class NoFly {
-        +fly()
-    }
-    class HighQuack {
-        +quack()
-    }
-    class NoQuack {
-        +quack()
-    }
-    class MallardDuck {
-    }
-    class RubberDuck {
-    }
-    Duck --> FlyBehavior
-    Duck --> QuackBehavior
-    Duck <|-- MallardDuck
-    Duck <|-- RubberDuck
-    FlyBehavior <|.. ModerateFly
-    FlyBehavior <|.. NoFly
-    QuackBehavior <|.. HighQuack
-    QuackBehavior <|.. NoQuack
+    
+    %% Associations
+    Duck --> FlyBehavior : Strategy
+    Duck --> QuackBehavior : Strategy
+
+    %% Bottom: Concrete Implementations
+    FlyBehavior <|.. ModerateFly : Realization
+    FlyBehavior <|.. NoFly : Realization
+    
+    QuackBehavior <|.. HighQuack : Realization
+    QuackBehavior <|.. NoQuack : Realization
+
+    class MallardDuck
+    class RubberDuck
+    class ModerateFly
+    class NoFly
+    class HighQuack
+    class NoQuack
 ```
