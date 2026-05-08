@@ -1,7 +1,6 @@
 package Subject;
 
 import Observer.observer;
-import Subject.subject;
 
 public class WeatherData implements subject {
     float temp, press, hum;

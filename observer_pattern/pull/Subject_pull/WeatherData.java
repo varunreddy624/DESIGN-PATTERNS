@@ -1,7 +1,6 @@
 package Subject_pull;
 
 import Observer_pull.observer;
-import Subject_pull.subject;
 
 public class WeatherData implements subject {
     float temp, press, hum;
